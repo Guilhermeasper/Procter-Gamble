@@ -1,7 +1,7 @@
 
   float angle = 0;
   float speed = 0.5;
-  double lenSpeed = 0.2;
+  double lenSpeed = 0.05;
   float len = 0;
   float x = -20;
   float y = 0;
@@ -21,7 +21,8 @@ void draw() {
   translate(width/2, height/2);
   rotate(angle);
   strokeWeight(5);
-  stroke(random(0,255), random(0,255), random(0,255));
+  stroke(map(mouseY, 0, 720, 0, 255),0,map(mouseX, 0, 1280, 0, 255));
+  //stroke(random(0,255), random(0,255), random(0,255));
   point(-5, len);
   popMatrix();
   //angle2 = map(mouseX, 0, width, 0, 2*PI);

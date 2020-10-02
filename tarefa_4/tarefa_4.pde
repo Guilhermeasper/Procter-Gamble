@@ -24,7 +24,7 @@ class Circle {
   }
 
   void show() {
-    fill(255, 255, 255, 0);
+    noFill();
     strokeWeight(2);
     stroke(0,0,0);
     ellipse(x, y, this.radius, this.radius);
@@ -45,22 +45,17 @@ float speed = 0.1;
 
 void draw() {
   background(115, 230, 115);
-  pushMatrix();
+  
   translate(width/2, height/2);
   circle1.show();
-  popMatrix();
   
-  pushMatrix();
-  translate(width/2, height/2);
   circle2.move();
   circle2.show();
-  popMatrix();
-  
-  pushMatrix();
-  translate(width/2+circle2.x, height/2+circle2.y);
+ 
+  translate(circle2.x, circle2.y);
   rotate(angle);
   strokeWeight(3);
+  stroke(255, 255, 0);
   point(0, 26);
-  popMatrix();
-  angle += speed;
+  angle += 0.15;
 }
