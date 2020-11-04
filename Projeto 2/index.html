@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='author' content=''>
+        <meta name='description' content='Projeto da disciplina Processamento Gráfico'>
+        <title>Curvas de Bezier</title>
+    </head>
+    <body>
+        <header>
+            <h1>Curvas de Bezier</h1>
+            <button type = 'button' onclick = 'criarCurva()'>Criar Curva</button>
+            <button type = 'button' onclick = 'deletarCurva()'>Deletar Curva</button>
+            <button type = 'button' onclick = 'curvaMenos()'>&lt;</button>
+            <button type = 'button' onclick = 'curvaMais()'>&gt;</button>
+            <label id = 'curva'></label>
+            <label>Número de avaliações:</label>
+            <input type = 'number' id = 'avaliacoes' min = '1' value = '10'/><br>
+            <label>Pontos de controle:</label>
+            <input id = 'pontos' type = 'checkbox' onclick = desenhar() checked/>
+            <label>Poligonais de controle:</label>
+            <input id = 'linhas' type = 'checkbox' onclick = 'desenhar()' checked/>
+            <label>Curvas:</label>
+            <input id = 'curvas' type = 'checkbox' onclick = 'desenhar()' checked/>
+        </header>
+        <canvas
+            id = 'quadro'
+            width = '1278'
+            height = '418'
+            style='border:1px solid #000000'
+            onclick = 'addPonto(event)'>
+        </canvas>
+        <script src = 'bezier.js'></script>
+    </body>
+</html>
