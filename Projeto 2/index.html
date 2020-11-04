@@ -4,6 +4,7 @@
         <meta charset='UTF-8'>
         <meta name='author' content=''>
         <meta name='description' content='Projeto da disciplina Processamento Gráfico'>
+        <link rel="stylesheet" href="style.css">
         <title>Curvas de Bezier</title>
     </head>
     <body>
@@ -28,8 +29,14 @@
             width = '1278'
             height = '418'
             style='border:1px solid #000000'
-            onclick = 'addPonto(event)'>
+            onclick = ''
+            onmousemove = "mouseMove(event)"
+            onmousedown = "mouseDown(event)"
+            onmouseup = "mouseUp(event)">
         </canvas>
+        <div id="dialog">
+            <button id="cancel"> X</button><button id="conclui"> V</button>
+        </div>
         <script src = 'bezier.js'></script>
     </body>
 </html>
