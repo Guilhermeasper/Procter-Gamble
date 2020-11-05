@@ -16,7 +16,7 @@
             <button type = 'button' onclick = 'curvaMais()'>&gt;</button>
             <label id = 'curva'></label>
             <label>Número de avaliações:</label>
-            <input type = 'number' id = 'avaliacoes' min = '1' value = '10'/><br>
+            <input type = 'number' id = 'avaliacoes' min = '1' value = '200'/><br>
             <label>Pontos de controle:</label>
             <input id = 'pontos' type = 'checkbox' onclick = desenhar() checked/>
             <label>Poligonais de controle:</label>
@@ -37,6 +37,10 @@
         <div id="dialog">
             <button id="cancel"> X</button><button id="conclui"> V</button>
         </div>
+        <script src = 'point.js'></script>
+        <script src = 'curve.js'></script>
+        <script src = 'line.js'></script>
+        
         <script src = 'bezier.js'></script>
     </body>
 </html>
