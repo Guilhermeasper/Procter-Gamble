@@ -1,10 +1,9 @@
 class Curve{
-    constructor(context, id){
+    constructor(context, id, pointSize){
         this.context = context
         this.id = id;
         this.points = [];
-        this.controlPointsMatrix = [...Array(1280)].map(x=>Array(418).fill(-1));
-        this.pointSize = 5;
+        this.pointSize = pointSize;
     }
 
     drawControlLines(color){
@@ -14,7 +13,7 @@ class Curve{
             this.context.beginPath();
             this.context.moveTo(b1.x, b1.y);
             this.context.lineTo(b2.x, b2.y);
-            this.context.lineWidth = 4;
+            this.context.lineWidth = 1;
             this.context.strokeStyle = color;
             this.context.stroke();
         }
@@ -39,6 +38,7 @@ class Curve{
                 this.context.beginPath();
                 this.context.moveTo(b1.x, b1.y);
                 this.context.lineTo(b2.x, b2.y);
+                this.context.lineWidth = 4;
                 this.context.strokeStyle = color;
                 this.context.stroke();
             }
@@ -47,11 +47,9 @@ class Curve{
 
     addControlPoint(controlPoint){
         let position = this.points.push(controlPoint);
-        this.updateMatrix();
     }
 
     removeControlPoint(controlPointPosition){
-        this.updateMatrix();
         curvas.splice(this.points, controlPointPosition);
     }
 
@@ -67,23 +65,6 @@ class Curve{
             return this.deCast(pts, t, tm1);
         } else {
             return pontos[0];
-        }
-    }
-
-    updateMatrix() {
-        for (let i = 0; i < this.controlPointsMatrix.length; i++) {
-            const rows = this.controlPointsMatrix[i];
-            for (let j = 0; j < rows.length; j++) {
-                this.controlPointsMatrix[i][j] = -1;
-            }
-        }
-        for (let index = 0; index < this.points.length; index++) {
-            const point = this.points[index];
-            for (let x = point.x - this.pointSize; x <= point.x + this.pointSize; x++) {
-                for (let y = point.y - this.pointSize; y <= point.y + this.pointSize; y++) {
-                    this.controlPointsMatrix[x][y] = index;
-                }
-            }
         }
     }
 }

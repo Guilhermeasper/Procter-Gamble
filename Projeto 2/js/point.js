@@ -7,6 +7,6 @@ class Point{
     }
 
     draw(){
-        this.context.fillRect(this.x - 5, this.y - 5, this.size, this.size);
+        this.context.fillRect(this.x - this.size, this.y - this.size, this.size, this.size);
     }
 }
