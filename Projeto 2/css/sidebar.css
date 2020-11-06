@@ -4,17 +4,17 @@
 
 #sidebar {
     float: left;
-    width: 15vw;
+    width: 20vw;
     height: 100vh;
     background-color: rgb(224, 191, 243);
 }
 
 #canvas{
-    margin-left: 15vw;
+    margin-left: 20vw;
 }
 
 canvas {
-    width: 85vw;
+    width: 80vw;
     height: 100vh;
 }
 
@@ -25,8 +25,8 @@ canvas {
 }
 
 figure > img {
-    width: 25px;
-    height: 25px;
+    width: 2vw;
+    height: 2vw;
 }
 
 #sidebar .button {
@@ -35,8 +35,8 @@ figure > img {
     display: inline-block;
     padding: 10px;
     text-align: center;
-    width: 3em;
-    height: 3em;
+    width: 3vw;
+    height: 3vw;
     text-decoration: none;
 }
 
@@ -52,7 +52,7 @@ figure > img {
     font-weight: bold;
     text-transform: uppercase;
     color: #1d368a;
-    font-size: 10px;
+    font-size: 0.65vw;
 }
 
 #sidebar #manageButtons{
