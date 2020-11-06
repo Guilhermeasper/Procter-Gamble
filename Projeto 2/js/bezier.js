@@ -98,6 +98,7 @@ function mouseDown(event) {
     } else {
         hideMenus();
     }
+    updatePageElements();
     onHolding = true;
 }
 
@@ -145,7 +146,8 @@ function desenharPontos() {
     for (let j = 0; j < currentCurves.length; j++) {
         if (currentCurves[j].points.length > 0) {
             for (let i = 0; i < currentCurves[j].points.length; i++) {
-                if(selected != -1 && i == selected) currentCurves[j].points[i].draw("blue");
+                if(selected != -1 && i == selected && j== currentCurve) currentCurves[j].points[i].draw("blue");
+                else if(j == currentCurve) currentCurves[j].points[i].draw("yellow");
                 else currentCurves[j].points[i].draw("black");
             }
         }

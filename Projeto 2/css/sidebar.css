@@ -8,11 +8,11 @@
     float: left;
     width: 20vw;
     height: 100vh;
-    background-color: rgb(224, 191, 243);
+    background-color: rgba(227, 206, 240, 0.856);
     box-shadow: 0 0 6px black;
 }
 
-#canvas{
+#canvas {
     margin-left: 20vw;
 }
 
@@ -22,14 +22,14 @@ canvas {
 }
 
 #createCurveButton {
-    background: #ccc url('add.svg') no-repeat center;
+    background: #ccc url("add.svg") no-repeat center;
     height: 80px;
     width: 80px;
 }
 
 figure > img {
-    width: 1vw;
-    height: 1vw;
+    width: 1.2vw;
+    height: 1.2vw;
 }
 
 #sidebar .button {
@@ -60,7 +60,7 @@ figure > img {
     font-size: 0.5vw;
 }
 
-#sidebar #manageButtons{
+#sidebar #manageButtons {
     width: 100%;
 }
 
@@ -75,14 +75,21 @@ figure > img {
 }
 
 #title {
-    font-size: 0.75vw;
+    font-size: 1vw;
     margin-bottom: 2vh;
 }
- .controlsLabels {
-     float: left;
-     width: 150px;
- }
+.controlsLabels {
+    float: left;
+    width: 150px;
+}
 
 .controls {
     margin-bottom: 10px;
+}
+
+footer {
+    position: fixed;
+    left: 3.75vw;
+    bottom: 0;
+    font-size: 0.75vw;
 }

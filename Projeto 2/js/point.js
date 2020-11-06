@@ -7,7 +7,7 @@ class Point{
     }
 
     draw(color){
-        this.context.style = color;
+        this.context.fillStyle = color;
         this.context.fillRect(this.x - this.size, this.y - this.size, this.size, this.size);
     }
 }
