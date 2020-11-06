@@ -1,0 +1,74 @@
+#avaliacoes {
+    width: 50px;
+}
+
+#sidebar {
+    float: left;
+    width: 15vw;
+    height: 100vh;
+    background-color: rgb(224, 191, 243);
+}
+
+#canvas{
+    margin-left: 15vw;
+}
+
+canvas {
+    width: 85vw;
+    height: 100vh;
+}
+
+#createCurveButton {
+    background: #ccc url('add.svg') no-repeat center;
+    height: 80px;
+    width: 80px;
+}
+
+figure > img {
+    width: 25px;
+    height: 25px;
+}
+
+#sidebar .button {
+    background: #fff;
+    border-radius: 6px;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    width: 3em;
+    height: 3em;
+    text-decoration: none;
+}
+
+#sidebar .button figure {
+    margin: 0 0 5px;
+}
+
+#sidebar .button figure img {
+    border-radius: 100%;
+}
+
+#sidebar .button .text {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1d368a;
+    font-size: 10px;
+}
+
+#sidebar #manageButtons{
+    width: 100%;
+}
+
+.center {
+    width: 60%;
+    margin: auto;
+}
+
+.space {
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+
+#title {
+    font-size: 1.5rem;
+}
