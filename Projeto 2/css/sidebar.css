@@ -1,5 +1,7 @@
 #avaliacoes {
-    width: 50px;
+    width: 3vw;
+    height: 3vh;
+    border-radius: 6px;
 }
 
 #sidebar {
@@ -7,6 +9,7 @@
     width: 20vw;
     height: 100vh;
     background-color: rgb(224, 191, 243);
+    box-shadow: 0 0 6px black;
 }
 
 #canvas{
@@ -25,19 +28,21 @@ canvas {
 }
 
 figure > img {
-    width: 2vw;
-    height: 2vw;
+    width: 1vw;
+    height: 1vw;
 }
 
 #sidebar .button {
+    opacity: 80%;
     background: #fff;
     border-radius: 6px;
     display: inline-block;
     padding: 10px;
     text-align: center;
-    width: 3vw;
-    height: 3vw;
+    width: 2.5vw;
+    height: 2.5vw;
     text-decoration: none;
+    box-shadow: 0 0 3px black;
 }
 
 #sidebar .button figure {
@@ -52,7 +57,7 @@ figure > img {
     font-weight: bold;
     text-transform: uppercase;
     color: #1d368a;
-    font-size: 0.65vw;
+    font-size: 0.5vw;
 }
 
 #sidebar #manageButtons{
@@ -70,6 +75,14 @@ figure > img {
 }
 
 #title {
-    font-size: 2rem;
+    font-size: 0.75vw;
     margin-bottom: 2vh;
+}
+ .controlsLabels {
+     float: left;
+     width: 150px;
+ }
+
+.controls {
+    margin-bottom: 10px;
 }

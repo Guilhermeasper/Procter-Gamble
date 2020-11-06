@@ -7,17 +7,22 @@
             name="description"
             content="Projeto da disciplina Processamento Gráfico"
         />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="./css/page.css" />
         <link rel="stylesheet" href="./css/createMenu.css" />
         <link rel="stylesheet" href="./css/pointMenu.css" />
         <link rel="stylesheet" href="./css/sidebar.css" />
+        <link rel="stylesheet" href="./css/switch.css" />
         <title>Curvas de Bezier</title>
     </head>
     <body>
         <div id="sidebar">
             <div id="title">
-                <div class="center" >
-                    <label>Curvas de Bezier</label>
+                <div class="center">
+                    <h1>Curvas de Bezier</h1>
                 </div>
             </div>
 
@@ -52,7 +57,7 @@
             </div>
             <div class="space">
                 <div class="center">
-                    <div class="text">Navegar entre Curvas</div>
+                    <h2 class="text">Navegar entre Curvas</h2>
                 </div>
 
                 <div id="nav">
@@ -73,12 +78,17 @@
                     </div>
                 </div>
             </div>
-
             <div class="space">
                 <div class="center">
                     <label>Selecionada: </label><label id="curva"></label>
                 </div>
             </div>
+            <div class="space">
+                <div class="center">
+                    <h2 class="text">Controles</h2>
+                </div>
+            </div>
+
             <div class="space">
                 <div class="center">
                     <label>Avaliações:</label>
@@ -87,45 +97,82 @@
                         id="avaliacoes"
                         min="1"
                         value="200"
+                        onchange="updatePageElements()"
+                        onkeyup="updatePageElements()"
                     /><br />
                 </div>
             </div>
             <div class="space">
                 <div class="center">
-                    <label>Pontos de controle:</label>
-                    <input
-                        id="pontos"
-                        type="checkbox"
-                        onclick="desenhar()"
-                        checked
-                    />
+                    <div class="controlsLabels">
+                        <label>Pontos de controle </label>
+                    </div>
+                    <div class="controls">
+                        <form action="#">
+                            <div class="switch">
+                                <input
+                                    id="pontos"
+                                    onclick="desenhar()"
+                                    checked
+                                    type="checkbox"
+                                    class="switch-input"
+                                />
+                                <label for="pontos" class="switch-label"
+                                    >Switch</label
+                                >
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="center">
-                    <label>Poligonais de controle:</label>
-                    <input
-                        id="linhas"
-                        type="checkbox"
-                        onclick="desenhar()"
-                        checked
-                    />
+                    <div class="controlsLabels">
+                        <label>Poligonais de controle </label>
+                    </div>
+                    <div class="controls">
+                        <form action="#">
+                            <div class="switch">
+                                <input
+                                    id="linhas"
+                                    onclick="desenhar()"
+                                    checked
+                                    type="checkbox"
+                                    class="switch-input"
+                                />
+                                <label for="linhas" class="switch-label"
+                                    >Switch</label
+                                >
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="center">
-                    <label>Curvas:</label>
-                    <input
-                        id="curvas"
-                        type="checkbox"
-                        onclick="desenhar()"
-                        checked
-                    />
+                    <div class="controlsLabels">
+                        <label>Curvas </label>
+                    </div>
+                    <div class="controls">
+                        <form action="#">
+                            <div class="switch">
+                                <input
+                                    id="curvas"
+                                    onclick="desenhar()"
+                                    checked
+                                    type="checkbox"
+                                    class="switch-input"
+                                />
+                                <label for="curvas" class="switch-label"
+                                    >Switch</label
+                                >
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="canvas">
             <canvas
                 id="quadro"
-                style="border: 1px solid #000000"
                 onclick=""
                 onmousemove="mouseMove(event)"
                 onmousedown="mouseDown(event)"

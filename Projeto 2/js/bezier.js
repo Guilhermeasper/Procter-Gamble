@@ -16,7 +16,7 @@ var deletePoint = document.getElementById("deletePoint");
 var curveText = document.getElementById("curva");
 var sidebar = document.getElementById("sidebar");
 var selected = -1;
-var pointSize = 7;
+var pointSize = 10;
 var yOffset = 0; //2 + canvasTopOffset;
 var xOffset = sidebar.getBoundingClientRect().width;//10;
 var xMenuOffset = 0;
@@ -129,22 +129,24 @@ function desenhar() {
     canvas.width = canvasDiv.getBoundingClientRect().width;
     canvas.height = canvasDiv.getBoundingClientRect().height;
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+    if (document.getElementById("curvas").checked == true) {
+        desenharcurrentCurves();
+    }
     if (document.getElementById("linhas").checked == true) {
         desenharLinhas();
     }
     if (document.getElementById("pontos").checked == true) {
         desenharPontos();
     }
-    if (document.getElementById("curvas").checked == true) {
-        desenharcurrentCurves();
-    }
+    
 }
 
 function desenharPontos() {
     for (let j = 0; j < currentCurves.length; j++) {
         if (currentCurves[j].points.length > 0) {
             for (let i = 0; i < currentCurves[j].points.length; i++) {
-                currentCurves[j].points[i].draw();
+                if(selected != -1 && i == selected) currentCurves[j].points[i].draw("blue");
+                else currentCurves[j].points[i].draw("black");
             }
         }
     }
@@ -152,8 +154,8 @@ function desenharPontos() {
 
 function desenharLinhas() {
     for (let j = 0; j < currentCurves.length; j++) {
-        if (j == currentCurve) currentCurves[j].drawControlLines("red");
-        else currentCurves[j].drawControlLines("black");
+        if (j == currentCurve) currentCurves[j].drawControlLines("green");
+        else currentCurves[j].drawControlLines("grey");
     }
 }
 
