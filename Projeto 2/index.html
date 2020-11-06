@@ -15,20 +15,33 @@
     </head>
     <body>
         <div id="sidebar">
-            <div class="center" id="title">
-                <span>Curvas</span><span> de Bezier</span>
+            <div id="title">
+                <div class="center" >
+                    <label>Curvas de Bezier</label>
+                </div>
             </div>
+
             <div id="manageButtons">
                 <div class="space">
                     <div class="center">
-                        <a href="#" id="addButton" class="button" onclick="criarCurva()">
+                        <a
+                            href="#"
+                            id="addButton"
+                            class="button"
+                            onclick="criarCurva()"
+                        >
                             <figure class="Icon">
                                 <img src="./icons/add.svg" />
                             </figure>
                             <div class="text">Criar</div>
                         </a>
 
-                        <a href="#" id="deleteButton" class="button" onclick="deletarCurva()">
+                        <a
+                            href="#"
+                            id="deleteButton"
+                            class="button"
+                            onclick="deletarCurva()"
+                        >
                             <figure class="Icon">
                                 <img src="./icons/delete.svg" />
                             </figure>
@@ -41,23 +54,23 @@
                 <div class="center">
                     <div class="text">Navegar entre Curvas</div>
                 </div>
-            </div>
 
-            <div class="space" id="nav">
-                <div class="center">
-                    <a href="#" class="button" onclick="curvaMenos()">
-                        <figure class="Icon">
-                            <img src="./icons/prevCaret.svg" />
-                        </figure>
-                        <div class="text">Anterior</div>
-                    </a>
+                <div id="nav">
+                    <div class="center">
+                        <a href="#" class="button" onclick="curvaMenos()">
+                            <figure class="Icon">
+                                <img src="./icons/prevCaret.svg" />
+                            </figure>
+                            <div class="text">Anterior</div>
+                        </a>
 
-                    <a href="#" class="button" onclick="curvaMais()">
-                        <figure class="Icon">
-                            <img src="./icons/nextCaret.svg" />
-                        </figure>
-                        <div class="text">Próxima</div>
-                    </a>
+                        <a href="#" class="button" onclick="curvaMais()">
+                            <figure class="Icon">
+                                <img src="./icons/nextCaret.svg" />
+                            </figure>
+                            <div class="text">Próxima</div>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -87,9 +100,7 @@
                         checked
                     />
                 </div>
-            </div>
 
-            <div class="space">
                 <div class="center">
                     <label>Poligonais de controle:</label>
                     <input
@@ -99,9 +110,7 @@
                         checked
                     />
                 </div>
-            </div>
 
-            <div class="space">
                 <div class="center">
                     <label>Curvas:</label>
                     <input
@@ -140,7 +149,9 @@
         <div id="onPointDialog">
             <a href="#" class="button" id="addPoint">
                 <figure class="Icon"><img src="./icons/add.svg" /></figure>
-                <span class="tooltiptext">Adicionar um novo ponto de controle</span>
+                <span class="tooltiptext"
+                    >Adicionar um novo ponto de controle</span
+                >
             </a>
             <a href="#" class="button" id="deletePoint">
                 <figure class="Icon"><img src="./icons/delete.svg" /></figure>
