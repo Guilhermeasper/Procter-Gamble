@@ -7,7 +7,7 @@ Demonstra manipulação de objetos e as possibilidades de observação do mesmo 
 Desenho de curvas de Bezier utilizando o algoritmo de De Casteljau
 
 ## [Projeto 3 - Phong Light](/Projeto%203)
-Desenho de curvas de Bezier utilizando o algoritmo de De Casteljau
+Demonstra o algoritmo de iluminação de phong
 
 ## Integrantes
 - [Guilherme Afonso(gasp)](https://github.com/guilhermeasper)
