@@ -5,7 +5,7 @@ let arrayOfBase;
 let arrayOfNormal;
 let arrayOfSpecular;
 let cameraZ = 10;
-let lightZ = 300;
+let lightZ = 200;
 let observerMatrix;
 let lightMatrix;
 let rangeLight;
@@ -20,8 +20,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(410, 736);
-  observerMatrix = generateObserverMatrix();
+  createCanvas(imgBase.width, imgBase.height);
+  observerMatrix = generateObserverMatrix(width, height);
   
 
   image(imgNormal, 0, 0);
@@ -40,6 +40,15 @@ function setup() {
   lightMatrix = generateLightMatrix(0, 0);
   phongLight();
   
+}
+
+
+function onDistanceChange(){
+  lightZ = document.getElementById("lightValue").value;
+  cameraZ = document.getElementById("cameraValue").value;
+  observerMatrix = generateObserverMatrix(width, height);
+  lightMatrix = generateLightMatrix(width/2, height/2);
+  phongLight();
 }
 
 
@@ -65,11 +74,26 @@ function pixelsToArray(img) {
 }
 
 function phongLight(){
+  let r = document.getElementById("redColor").value/255;
+  let g = document.getElementById("greenColor").value/255;
+  let b = document.getElementById("blueColor").value/255;
+  let htmlSpecular = document.getElementById("specular");
+  let htmlDifuse = document.getElementById("difuse");
+
+  if(htmlSpecular.checked && !htmlDifuse.checked){
+    onlySpecular = true;
+  }else if(!htmlSpecular.checked && htmlDifuse.checked){
+    onlyDifuse = true;
+  }else{
+    onlySpecular = false;
+    onlyDifuse = false;
+  }
+
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
       let ambientLight = createVector(0, 0, 0);
 
-      rangeLight = createVector(0.7, 0.7, 0.7);
+      rangeLight = createVector(r, g, b);
       let difuseLight = createVector(0, 0, 0);
       let normalAndLight = Math.max(arrayOfNormal[x][y].dot(lightMatrix[x][y]), 0);
       p5.Vector.mult(arrayOfBase[x][y], normalAndLight, difuseLight);
@@ -79,7 +103,7 @@ function phongLight(){
       p5.Vector.mult(arrayOfNormal[x][y], 2*normalAndLight, mirrorMath);
       p5.Vector.sub(lightMatrix[x][y], mirrorMath, mirrorLight);
 
-      let specularMath = Math.max(observerMatrix[x][y].dot(mirrorLight), 0)**5;
+      let specularMath = Math.max(observerMatrix[x][y].dot(mirrorLight), 0)**2;
       let specularLight = createVector(0, 0, 0);
       p5.Vector.mult(arrayOfSpecular[x][y], specularMath, specularLight);
 
@@ -108,6 +132,11 @@ function phongLight(){
 
 function mouseMoved(){
   lightMatrix = generateLightMatrix(mouseX, mouseY);
+  phongLight();
+}
+
+function mouseClicked(){
+  observerMatrix = generateObserverMatrix(mouseX, mouseY);
   phongLight();
 }
 
@@ -140,10 +169,10 @@ function denormalizeColor(color){
 }
 
 
-function generateObserverMatrix(){
+function generateObserverMatrix(x, y){
   let newMatrix = [];
-  let cameraX = width;
-  let cameraY = height;
+  let cameraX = x;
+  let cameraY = y;
   for (let x = 0; x < width; x++) {
     let temp = [];
     for (let y = 0; y < height; y++) {
